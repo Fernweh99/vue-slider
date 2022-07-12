@@ -48,10 +48,18 @@ const app = new Vue({
   },
   methods: {
     goToNext() {
-      this.currentIndex++;
+      if (this.currentIndex >= this.pictures.length - 1) {
+        this.currentIndex = 0;
+      } else {
+        this.currentIndex++;
+      }
     },
     goToPrev() {
-      this.currentIndex--;
+      if (!this.currentIndex) {
+        this.currentIndex = this.pictures.length - 1;
+      } else {
+        this.currentIndex--;
+      }
     }
   }
 })

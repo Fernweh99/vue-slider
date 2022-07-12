@@ -19,8 +19,8 @@
   <section id="carousel">
     <div class="container">
       <div class="carousel-wrapper">
-        <button id="right-btn" class="cs-btn"><i class="fa-solid fa-chevron-right"></i></button>
-        <button id="left-btn" class="cs-btn"><i class="fa-solid fa-chevron-left"></i></button>
+        <button @click="goToNext" id="right-btn" class="cs-btn"><i class="fa-solid fa-chevron-right"></i></button>
+        <button @click="goToPrev" id="left-btn" class="cs-btn"><i class="fa-solid fa-chevron-left"></i></button>
         <div id="carousel-main">
           <div v-for="(pic, i) in pictures" class="carousel-image" :class="{'active' : currentIndex === i}">
             <img :src="pic.url" :alt="pic.title">

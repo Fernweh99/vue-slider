@@ -9,6 +9,7 @@ const app = new Vue({
   el: "#carousel",
   data: {
     currentIndex: 0,
+    play: "",
     pictures: [
       {
         url: 'http://www.viaggiareonline.it/wp-content/uploads/2014/11/sweden_148857365.jpg',
@@ -63,7 +64,10 @@ const app = new Vue({
       this.currentIndex = i;
     },
     autoplay() {
-      setInterval(this.goToNext,3000)
+      this.play = setInterval(this.goToNext,3000)
+    },
+    stopAutoplay(){
+      clearInterval(this.play);
     }
   },
   mounted () {

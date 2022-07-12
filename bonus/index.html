@@ -29,7 +29,7 @@
           </div>
         </div>
         <div id="carousel-index">
-          <img v-for="(pic, i) in pictures" :src="pic.url" alt="pic.title" :class="{'active' : currentIndex === i}">
+          <img v-for="(pic, i) in pictures" @click="goToRespectiveImage(i)" :src="pic.url" alt="pic.title" :class="{'active' : currentIndex === i}">
         </div>
       </div>
     </div>

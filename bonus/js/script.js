@@ -61,6 +61,12 @@ const app = new Vue({
     },
     goToRespectiveImage(i) {
       this.currentIndex = i;
+    },
+    autoplay() {
+      setInterval(this.goToNext,3000)
     }
+  },
+  mounted () {
+    this.autoplay()
   }
 })
